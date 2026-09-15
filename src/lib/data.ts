@@ -52,13 +52,18 @@ export const nav: NavItem[] = [
   { label: "Contact Us", href: "/contact" },
 ];
 
+// Stock photography (Unsplash) — the client liked how these looked and
+// asked to keep them rather than swap in local placeholders. To replace
+// with real photography later, point `image` at a local file under
+// public/images/ (e.g. "/images/hero-1.jpg") instead of these URLs.
 export const heroSlides = [
   {
     id: "welcome",
     eyebrow: "Association of ARCs in India",
     title: "Reforming the business of securitisation and asset reconstruction",
     subtitle: "Creating value for stakeholders across India's financial ecosystem.",
-    image: "/images/hero-1.jpg",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop",
     cta: { label: "About the Association", href: "/about" },
   },
   {
@@ -67,7 +72,8 @@ export const heroSlides = [
     title: "RBI guidelines and regulatory instructions for stressed asset resolution",
     subtitle:
       "Access the latest Reserve Bank of India circulars and directions governing ARCs.",
-    image: "/images/hero-2.jpg",
+    image:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000&auto=format&fit=crop",
     cta: { label: "View RBI Guidelines", href: "/knowledge-center/rbi-guideline" },
   },
   {
@@ -75,7 +81,8 @@ export const heroSlides = [
     eyebrow: "Our Members",
     title: "A unified voice for every RBI-registered Asset Reconstruction Company",
     subtitle: "Representing member ARCs driving India's stressed-asset resolution.",
-    image: "/images/hero-3.jpg",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop",
     cta: { label: "Meet Our Members", href: "/members" },
   },
   {
@@ -83,7 +90,8 @@ export const heroSlides = [
     eyebrow: "Latest Updates",
     title: "Quarterly newsletters, performance highlights and annual reports",
     subtitle: "Stay current with industry performance and association activity.",
-    image: "/images/hero-4.jpg",
+    image:
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000&auto=format&fit=crop",
     cta: { label: "Browse Updates", href: "/updates" },
   },
 ];
@@ -204,7 +212,8 @@ export const updates: DocLink[] = [
 export type Member = {
   name: string;
   logo: string;
-  /** Shown as a larger, highlighted spotlight tile on the homepage. */
+  /** Shown slightly larger with a red ring on the homepage logo wall, and
+   * tagged "Flagship" on the Members directory page. */
   featured?: boolean;
 };
 

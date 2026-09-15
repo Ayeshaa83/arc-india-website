@@ -53,19 +53,23 @@ into `src/lib/data.ts` and `public/images/members/`.)
 
 ## Replacing the placeholder images
 
-The site currently uses stock photography for banners and gallery shots. To
-swap in real photos, drop files into `public/images/` using these exact
-filenames — the code already points at these paths, so no further edits are
-needed once the files are in place:
+The homepage hero banner uses stock photography (Unsplash) — the client
+liked how it looked, so it's staying as-is. The About page and Gallery page
+still use local placeholders. To swap those in, drop files into
+`public/images/` using these exact filenames — the code already points at
+these paths, so no further edits are needed once the files are in place:
 
 | Filename                  | Used for                          | Suggested size          |
 |----------------------------|------------------------------------|--------------------------|
-| `public/images/hero-1.jpg` | Homepage hero slide 1 ("Welcome")  | 1920×1080px or larger, landscape |
-| `public/images/hero-2.jpg` | Homepage hero slide 2 ("RBI")      | 1920×1080px or larger, landscape |
-| `public/images/hero-3.jpg` | Homepage hero slide 3 ("Members")  | 1920×1080px or larger, landscape |
-| `public/images/hero-4.jpg` | Homepage hero slide 4 ("Updates")  | 1920×1080px or larger, landscape |
 | `public/images/about.jpg`  | About Us page feature image        | 1200×900px or larger    |
 | `public/images/gallery-1.jpg` through `gallery-6.jpg` | Gallery page photos | 1200px wide or larger, any orientation |
+
+To replace a hero slide with real photography instead of the stock photo,
+add a file here and point that slide's `image` field in `heroSlides`
+(`src/lib/data.ts`) at `/images/<filename>` instead of its Unsplash URL.
+Recommended size for a hero slide: 1920×1080px or larger, landscape — the
+image is darkened with an overlay for text readability, so photos with
+visual interest toward the right/center of the frame work best.
 
 Notes:
 - `.jpg`, `.jpeg`, `.png`, or `.webp` all work — just keep the filename
@@ -74,8 +78,6 @@ Notes:
 - Next.js optimizes these automatically (resizing, compression, lazy
   loading), so there's no need to pre-shrink them — just avoid uploading
   anything over ~5MB per image.
-- The hero images are darkened with an overlay for text readability, so
-  photos with visual interest on the right/center of the frame work best.
 
 ## Getting started locally
 

@@ -1,15 +1,19 @@
 # Drop images here
 
-Add files using these exact names (extension can be `.jpg`, `.jpeg`, `.png`,
+The homepage hero banner currently uses stock photography (Unsplash) — the
+client liked how it looked, so it's staying as-is rather than being swapped
+for local placeholders. To replace a slide with real photography later,
+add a file here and point that slide's `image` field in
+`src/lib/data.ts` (`heroSlides`) at `/images/<filename>` instead of its
+Unsplash URL.
+
+The About page and Gallery page still use local file placeholders. Add
+files using these exact names (extension can be `.jpg`, `.jpeg`, `.png`,
 or `.webp` — just keep the name before the dot the same, or update the
 matching path in `src/lib/data.ts` / `src/app/about/page.tsx`):
 
 | Filename          | Used for                         |
 |-------------------|-----------------------------------|
-| `hero-1.jpg`      | Homepage hero slide 1 ("Welcome") |
-| `hero-2.jpg`      | Homepage hero slide 2 ("RBI")     |
-| `hero-3.jpg`      | Homepage hero slide 3 ("Members") |
-| `hero-4.jpg`      | Homepage hero slide 4 ("Updates") |
 | `about.jpg`       | About Us page feature image       |
 | `gallery-1.jpg` … `gallery-6.jpg` | Gallery page photos |
 
