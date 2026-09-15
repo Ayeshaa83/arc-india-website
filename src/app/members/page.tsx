@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import PromoBanner from "@/components/PromoBanner";
-import ContentNotice from "@/components/ContentNotice";
 import MemberDirectory from "@/components/MemberDirectory";
 import { members } from "@/lib/data";
 
@@ -18,13 +17,6 @@ export default function MembersPage() {
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <ContentNotice>
-          This directory currently includes {members.length} of the association&apos;s
-          27 registered members. Add any remaining members to the list in
-          src/lib/data.ts and drop their logos into public/images/members/ to
-          complete this page.
-        </ContentNotice>
-
         <MemberDirectory members={members} />
       </section>
 

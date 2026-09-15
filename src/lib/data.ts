@@ -88,8 +88,11 @@ export const heroSlides = [
   },
 ];
 
+// "Member ARCs" below is a static fallback only — StatsBand.tsx overrides
+// it live with members.length so the homepage count can never drift out
+// of sync with the actual member list again.
 export const stats = [
-  { label: "Member ARCs", value: "27+" },
+  { label: "Member ARCs", value: "23" },
   { label: "Years Representing the Industry", value: "15+" },
   { label: "RBI Guidelines Tracked", value: "50+" },
   { label: "Quarterly Newsletters Issued", value: "40+" },
@@ -207,10 +210,10 @@ export type Member = {
 
 // Confirmed member list with real logos supplied by the client, dropped
 // into public/images/members/ (see that folder's README.md for filenames).
-// The association states 27 registered members; this covers 23 with
-// logos in hand — add any remaining members the same way, with or
-// without a logo file (missing logos fall back to a lettermark badge
-// automatically, so the grid never looks broken).
+// To add a new member later: add an entry here with a `logo` path, then
+// drop a same-named file into that folder. A member without a logo file
+// yet automatically shows a lettermark badge instead, so the grid never
+// looks broken while a new logo is pending.
 export const members: Member[] = [
   {
     name: "National Asset Reconstruction Company Ltd (NARCL)",

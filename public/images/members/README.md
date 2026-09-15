@@ -29,11 +29,11 @@ array in `src/lib/data.ts`:
 | `maximus-arc.png`        | Maximus ARC Ltd                                           |
 | `reliance-arc.png`       | Reliance Asset Reconstruction                             |
 
-That's 23 of the association's stated 27 registered members. To add the
-remaining ones: add an entry to the `members` array in `src/lib/data.ts`
-with a `logo` path, then drop a same-named file here. If a logo isn't
-available yet, the card automatically shows a lettermark badge instead —
-nothing breaks, so members can be added ahead of receiving their logo.
+This is the confirmed, complete member list (23 companies) as supplied by
+the client. If a new company joins later: add an entry to the `members`
+array in `src/lib/data.ts` with a `logo` path, then drop a same-named
+file here. If a logo isn't available yet, the card automatically shows a
+lettermark badge instead — nothing breaks in the meantime.
 
 Files originally arrived named after the full company name (e.g.
 `"National Asset Reconstruction Company Ltd (NARCL).png"`) and were

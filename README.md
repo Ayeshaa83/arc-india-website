@@ -34,13 +34,10 @@ This rebuild keeps the same information architecture and copy as the current
 site, but a few sections were reconstructed from a summary of the live page
 rather than the full underlying dataset. These are marked with an on-page
 notice (and a `PLACEHOLDER` comment in `data.ts`) and should be replaced with
-authoritative content before launch:
+authoritative content before launch. (**Members** is done — the client
+supplied the confirmed list of 23 companies with real logos, already wired
+into `src/lib/data.ts` and `public/images/members/`.)
 
-- **Members** — 23 of the stated 27 registered members are in, each with a
-  real logo in `public/images/members/`. Add the remaining ~4 the same way:
-  an entry in the `members` array in `src/lib/data.ts` plus a same-named
-  logo file. A member without a logo file yet just shows a lettermark
-  badge, so nothing looks broken in the meantime.
 - **Office Bearers** and **Committees** — structure is in place; names and
   mandates need to be supplied.
 - **Events**, **Gallery**, **ARC in News** — sample/representative entries;
