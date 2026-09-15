@@ -205,11 +205,12 @@ export type Member = {
   featured?: boolean;
 };
 
-// PLACEHOLDER — replace with the confirmed full list of 27 RBI-registered
-// member ARCs. Each `logo` path expects a file at that location under
-// public/ — see public/images/members/README.md for the exact filenames.
-// Until a logo file exists, the site automatically falls back to a
-// lettermark badge, so nothing breaks while logos are being collected.
+// Confirmed member list with real logos supplied by the client, dropped
+// into public/images/members/ (see that folder's README.md for filenames).
+// The association states 27 registered members; this covers 23 with
+// logos in hand — add any remaining members the same way, with or
+// without a logo file (missing logos fall back to a lettermark badge
+// automatically, so the grid never looks broken).
 export const members: Member[] = [
   {
     name: "National Asset Reconstruction Company Ltd (NARCL)",
@@ -233,17 +234,17 @@ export const members: Member[] = [
     logo: "/images/members/invent-assets.png",
   },
   { name: "Pegasus Assets Reconstruction Pvt Ltd", logo: "/images/members/pegasus-arc.png" },
-  { name: "UV Asset Reconstruction Company Ltd", logo: "/images/members/uv-arc.png" },
   { name: "Omkara Assets Reconstruction Pvt Ltd", logo: "/images/members/omkara-arc.png" },
   { name: "Encore Asset Reconstruction Company Pvt Ltd", logo: "/images/members/encore-arc.png" },
   { name: "India SME Asset Reconstruction Company Ltd (ISARC)", logo: "/images/members/isarc.png" },
-  { name: "Suraksha Asset Reconstruction Ltd", logo: "/images/members/suraksha-arc.png" },
   { name: "Prudent ARC Ltd", logo: "/images/members/prudent-arc.png" },
   { name: "Rare Asset Reconstruction Ltd", logo: "/images/members/rare-arc.png" },
-  {
-    name: "Pridhvi Asset Reconstruction & Securitisation Company Ltd",
-    logo: "/images/members/pridhvi-arc.png",
-  },
+  { name: "ACRE ARC", logo: "/images/members/acre-arc.png" },
+  { name: "ANA ARC Pvt Ltd", logo: "/images/members/ana-arc.png" },
+  { name: "CFM Asset Reconstruction Pvt Ltd", logo: "/images/members/cfm-arc.png" },
+  { name: "J.C. Flowers Asset Reconstruction Pvt Ltd", logo: "/images/members/jc-flowers-arc.png" },
+  { name: "Maximus ARC Ltd", logo: "/images/members/maximus-arc.png" },
+  { name: "Reliance Asset Reconstruction", logo: "/images/members/reliance-arc.png" },
 ];
 
 export type OfficeBearer = {

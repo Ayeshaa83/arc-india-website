@@ -36,11 +36,11 @@ rather than the full underlying dataset. These are marked with an on-page
 notice (and a `PLACEHOLDER` comment in `data.ts`) and should be replaced with
 authoritative content before launch:
 
-- **Members** — currently seeded with 20 known ARC names; the site states
-  27 registered members, so the confirmed full list is needed. Logos drop
-  into `public/images/members/` — see that folder's `README.md` for exact
-  filenames. Until a logo file exists for a member, its card automatically
-  shows a lettermark badge instead, so nothing looks broken in the meantime.
+- **Members** — 23 of the stated 27 registered members are in, each with a
+  real logo in `public/images/members/`. Add the remaining ~4 the same way:
+  an entry in the `members` array in `src/lib/data.ts` plus a same-named
+  logo file. A member without a logo file yet just shows a lettermark
+  badge, so nothing looks broken in the meantime.
 - **Office Bearers** and **Committees** — structure is in place; names and
   mandates need to be supplied.
 - **Events**, **Gallery**, **ARC in News** — sample/representative entries;

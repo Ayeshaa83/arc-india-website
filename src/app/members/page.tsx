@@ -19,9 +19,10 @@ export default function MembersPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-20">
         <ContentNotice>
-          This directory lists {members.length} publicly known ARCs as a working
-          example — please share the confirmed list of all 27 member companies and
-          their logos to complete this page.
+          This directory currently includes {members.length} of the association&apos;s
+          27 registered members. Add any remaining members to the list in
+          src/lib/data.ts and drop their logos into public/images/members/ to
+          complete this page.
         </ContentNotice>
 
         <MemberDirectory members={members} />

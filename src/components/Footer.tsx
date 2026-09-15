@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { nav, org } from "@/lib/data";
 
@@ -10,8 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-md bg-gradient-to-br from-red-600 to-red-700 text-lg font-bold text-white">
-                A
+              <span className="flex h-10 items-center justify-center rounded-md bg-white px-2 py-1.5 shadow-md">
+                <Image
+                  src="/images/logo-mark.png"
+                  alt="Association of ARCs in India"
+                  width={58}
+                  height={29}
+                  className="h-full w-auto object-contain"
+                />
               </span>
               <span className="text-sm font-semibold text-white">
                 Association of ARCs in India

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { nav, org } from "@/lib/data";
@@ -29,8 +30,15 @@ export default function Header() {
       {/* Main nav */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3 group">
-          <span className="flex h-11 w-11 items-center justify-center rounded-md bg-gradient-to-br from-red-600 to-red-700 text-xl font-bold text-white shadow-lg shadow-red-900/30">
-            A
+          <span className="flex h-11 items-center justify-center rounded-md bg-white px-2.5 py-1.5 shadow-lg shadow-black/20">
+            <Image
+              src="/images/logo-mark.png"
+              alt="Association of ARCs in India"
+              width={64}
+              height={32}
+              className="h-full w-auto object-contain"
+              priority
+            />
           </span>
           <span className="flex flex-col leading-tight">
             <span className="text-base font-semibold tracking-tight text-white">
