@@ -17,8 +17,9 @@ Router) + TypeScript + Tailwind CSS, built for a one-click deploy on Vercel.
 src/
   app/                  Route folders — one per page (about, members, events, …)
   components/           Reusable UI: Header, Footer, HeroCarousel, PageBanner,
-                         PromoBanner, StatsBand, QuickLinksGrid, MemberMarquee,
-                         ContactForm, ContentNotice
+                         PromoBanner, StatsBand, QuickLinksGrid, MembersShowcase,
+                         MemberDirectory, MemberCard, MemberLogo, ContactForm,
+                         ContentNotice
   lib/data.ts           All site content lives here — nav, hero banners,
                          members, updates/newsletters, news, events, gallery
 ```
@@ -35,8 +36,11 @@ rather than the full underlying dataset. These are marked with an on-page
 notice (and a `PLACEHOLDER` comment in `data.ts`) and should be replaced with
 authoritative content before launch:
 
-- **Members** — currently seeded with ~20 known ARC names; the site states
-  27 registered members, so the confirmed full list + logos are needed.
+- **Members** — currently seeded with 20 known ARC names; the site states
+  27 registered members, so the confirmed full list is needed. Logos drop
+  into `public/images/members/` — see that folder's `README.md` for exact
+  filenames. Until a logo file exists for a member, its card automatically
+  shows a lettermark badge instead, so nothing looks broken in the meantime.
 - **Office Bearers** and **Committees** — structure is in place; names and
   mandates need to be supplied.
 - **Events**, **Gallery**, **ARC in News** — sample/representative entries;

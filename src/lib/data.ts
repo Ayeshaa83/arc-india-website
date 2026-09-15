@@ -198,29 +198,52 @@ export const updates: DocLink[] = [
   },
 ];
 
+export type Member = {
+  name: string;
+  logo: string;
+  /** Shown as a larger, highlighted spotlight tile on the homepage. */
+  featured?: boolean;
+};
+
 // PLACEHOLDER — replace with the confirmed full list of 27 RBI-registered
-// member ARCs and their official logos.
-export const members: { name: string; logo?: string }[] = [
-  { name: "National Asset Reconstruction Company Ltd (NARCL)" },
-  { name: "Asset Reconstruction Company (India) Ltd (ARCIL)" },
-  { name: "Edelweiss Asset Reconstruction Company Ltd" },
-  { name: "JM Financial Asset Reconstruction Company Ltd" },
-  { name: "Indiabulls Asset Reconstruction Company Ltd" },
-  { name: "Aditya Birla ARC Ltd" },
-  { name: "Phoenix ARC Pvt Ltd" },
-  { name: "International Asset Reconstruction Company Pvt Ltd" },
-  { name: "ASREC (India) Ltd" },
-  { name: "Alchemist Asset Reconstruction Company Ltd" },
-  { name: "Invent Assets Securitisation & Reconstruction Pvt Ltd" },
-  { name: "Pegasus Assets Reconstruction Pvt Ltd" },
-  { name: "UV Asset Reconstruction Company Ltd" },
-  { name: "Omkara Assets Reconstruction Pvt Ltd" },
-  { name: "Encore Asset Reconstruction Company Pvt Ltd" },
-  { name: "India SME Asset Reconstruction Company Ltd (ISARC)" },
-  { name: "Suraksha Asset Reconstruction Ltd" },
-  { name: "Prudent ARC Ltd" },
-  { name: "Rare Asset Reconstruction Ltd" },
-  { name: "Pridhvi Asset Reconstruction & Securitisation Company Ltd" },
+// member ARCs. Each `logo` path expects a file at that location under
+// public/ — see public/images/members/README.md for the exact filenames.
+// Until a logo file exists, the site automatically falls back to a
+// lettermark badge, so nothing breaks while logos are being collected.
+export const members: Member[] = [
+  {
+    name: "National Asset Reconstruction Company Ltd (NARCL)",
+    logo: "/images/members/narcl.png",
+    featured: true,
+  },
+  { name: "Asset Reconstruction Company (India) Ltd (ARCIL)", logo: "/images/members/arcil.png" },
+  { name: "Edelweiss Asset Reconstruction Company Ltd", logo: "/images/members/edelweiss-arc.png" },
+  { name: "JM Financial Asset Reconstruction Company Ltd", logo: "/images/members/jm-financial-arc.png" },
+  { name: "Indiabulls Asset Reconstruction Company Ltd", logo: "/images/members/indiabulls-arc.png" },
+  { name: "Aditya Birla ARC Ltd", logo: "/images/members/aditya-birla-arc.png" },
+  { name: "Phoenix ARC Pvt Ltd", logo: "/images/members/phoenix-arc.png" },
+  {
+    name: "International Asset Reconstruction Company Pvt Ltd",
+    logo: "/images/members/international-arc.png",
+  },
+  { name: "ASREC (India) Ltd", logo: "/images/members/asrec.png" },
+  { name: "Alchemist Asset Reconstruction Company Ltd", logo: "/images/members/alchemist-arc.png" },
+  {
+    name: "Invent Assets Securitisation & Reconstruction Pvt Ltd",
+    logo: "/images/members/invent-assets.png",
+  },
+  { name: "Pegasus Assets Reconstruction Pvt Ltd", logo: "/images/members/pegasus-arc.png" },
+  { name: "UV Asset Reconstruction Company Ltd", logo: "/images/members/uv-arc.png" },
+  { name: "Omkara Assets Reconstruction Pvt Ltd", logo: "/images/members/omkara-arc.png" },
+  { name: "Encore Asset Reconstruction Company Pvt Ltd", logo: "/images/members/encore-arc.png" },
+  { name: "India SME Asset Reconstruction Company Ltd (ISARC)", logo: "/images/members/isarc.png" },
+  { name: "Suraksha Asset Reconstruction Ltd", logo: "/images/members/suraksha-arc.png" },
+  { name: "Prudent ARC Ltd", logo: "/images/members/prudent-arc.png" },
+  { name: "Rare Asset Reconstruction Ltd", logo: "/images/members/rare-arc.png" },
+  {
+    name: "Pridhvi Asset Reconstruction & Securitisation Company Ltd",
+    logo: "/images/members/pridhvi-arc.png",
+  },
 ];
 
 export type OfficeBearer = {

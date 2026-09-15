@@ -2,7 +2,7 @@ import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import StatsBand from "@/components/StatsBand";
 import QuickLinksGrid from "@/components/QuickLinksGrid";
-import MemberMarquee from "@/components/MemberMarquee";
+import MembersShowcase from "@/components/MembersShowcase";
 import PromoBanner from "@/components/PromoBanner";
 import { updates, newsArticles, stampDutyNote } from "@/lib/data";
 
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      <MemberMarquee />
+      <MembersShowcase />
 
       {/* Closing CTA banner */}
       <PromoBanner
