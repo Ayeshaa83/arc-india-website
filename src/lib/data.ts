@@ -58,8 +58,7 @@ export const heroSlides = [
     eyebrow: "Association of ARCs in India",
     title: "Reforming the business of securitisation and asset reconstruction",
     subtitle: "Creating value for stakeholders across India's financial ecosystem.",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/hero-1.jpg",
     cta: { label: "About the Association", href: "/about" },
   },
   {
@@ -68,8 +67,7 @@ export const heroSlides = [
     title: "RBI guidelines and regulatory instructions for stressed asset resolution",
     subtitle:
       "Access the latest Reserve Bank of India circulars and directions governing ARCs.",
-    image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/hero-2.jpg",
     cta: { label: "View RBI Guidelines", href: "/knowledge-center/rbi-guideline" },
   },
   {
@@ -77,8 +75,7 @@ export const heroSlides = [
     eyebrow: "Our Members",
     title: "A unified voice for every RBI-registered Asset Reconstruction Company",
     subtitle: "Representing member ARCs driving India's stressed-asset resolution.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/hero-3.jpg",
     cta: { label: "Meet Our Members", href: "/members" },
   },
   {
@@ -86,8 +83,7 @@ export const heroSlides = [
     eyebrow: "Latest Updates",
     title: "Quarterly newsletters, performance highlights and annual reports",
     subtitle: "Stay current with industry performance and association activity.",
-    image:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/hero-4.jpg",
     cta: { label: "Browse Updates", href: "/updates" },
   },
 ];
@@ -323,12 +319,12 @@ export const events: EventItem[] = [
 
 // PLACEHOLDER — replace with actual gallery photography.
 export const gallery = [
-  "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1200&auto=format&fit=crop",
+  "/images/gallery-1.jpg",
+  "/images/gallery-2.jpg",
+  "/images/gallery-3.jpg",
+  "/images/gallery-4.jpg",
+  "/images/gallery-5.jpg",
+  "/images/gallery-6.jpg",
 ];
 
 export const stampDutyNote =

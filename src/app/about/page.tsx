@@ -59,7 +59,7 @@ export default function AboutPage() {
           </div>
           <div className="relative h-80 overflow-hidden rounded-2xl shadow-xl lg:h-96">
             <Image
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1400&auto=format&fit=crop"
+              src="/images/about.jpg"
               alt="Financial district skyline representing India's banking sector"
               fill
               className="object-cover"
