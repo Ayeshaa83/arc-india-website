@@ -36,10 +36,13 @@ rather than the full underlying dataset. These are marked with an on-page
 notice (and a `PLACEHOLDER` comment in `data.ts`) and should be replaced with
 authoritative content before launch. (**Members** is done — the client
 supplied the confirmed list of 23 companies with real logos, already wired
-into `src/lib/data.ts` and `public/images/members/`.)
+into `src/lib/data.ts` and `public/images/members/`. **Office Bearers** is
+also done — real names, roles and bios for all 8 leadership profiles are
+in `src/lib/data.ts`; only photos are pending, in
+`public/images/office-bearers/`.)
 
-- **Office Bearers** and **Committees** — structure is in place; names and
-  mandates need to be supplied.
+- **Committees** — structure is in place; names and mandates need to be
+  supplied.
 - **Events**, **Gallery**, **ARC in News** — sample/representative entries;
   swap in real events, photography and verified press links.
 - **Newsletter/report PDF links** (`updates` in `data.ts`) point to

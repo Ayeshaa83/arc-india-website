@@ -17,6 +17,11 @@ export const org = {
   email: "info@arcindia.co.in", // PLACEHOLDER — confirm with client
   phone: "+91 22 0000 0000", // PLACEHOLDER — confirm with client
   copyrightStart: 2018,
+  // The association's inception year — per Mr. Hari Hara Mishra's bio in
+  // officeBearers ("Actively engaged in ARC Association activities since
+  // its inception in 2009"). Drives the "Years Representing the Industry"
+  // stat below so it never needs manual updating.
+  foundedYear: 2009,
 };
 
 export type NavItem = {
@@ -96,14 +101,29 @@ export const heroSlides = [
   },
 ];
 
-// "Member ARCs" below is a static fallback only — StatsBand.tsx overrides
-// it live with members.length so the homepage count can never drift out
-// of sync with the actual member list again.
-export const stats = [
-  { label: "Member ARCs", value: "23" },
-  { label: "Years Representing the Industry", value: "15+" },
-  { label: "RBI Guidelines Tracked", value: "50+" },
-  { label: "Quarterly Newsletters Issued", value: "40+" },
+// Every figure here is computed from real data below (members, office
+// bearers, updates) rather than typed in by hand, so none of them can be
+// a fabricated number or drift out of sync as that underlying data
+// changes. `compute` is a closure rather than a plain value specifically
+// so it can reference `members` / `updates` / `officeBearers` / `org`,
+// all declared further down this file — safe, since the closure only
+// reads them when called later, well after the whole module has
+// finished evaluating.
+//
+// Earlier versions of this file had "RBI Guidelines Tracked" and
+// "Quarterly Newsletters Issued" as hand-typed placeholder values (50+
+// and 40+) invented when the site was first scaffolded, before any real
+// content existed — not measurements of anything real. Replaced them
+// with the office bearer count and the newsletter/report list length,
+// both tied to genuine data.
+export const stats: { label: string; compute: () => string | number }[] = [
+  { label: "Member ARCs", compute: () => members.length },
+  {
+    label: "Years Representing the Industry",
+    compute: () => `${new Date().getFullYear() - org.foundedYear}+`,
+  },
+  { label: "Leadership Team Members", compute: () => officeBearers.length },
+  { label: "Newsletters & Reports", compute: () => updates.length },
 ];
 
 export const quickLinks = [
@@ -263,14 +283,74 @@ export type OfficeBearer = {
   name: string;
   designation: string;
   organisation: string;
+  bio: string;
+  photo: string;
+  /** Shown as the large split-screen spotlight at the top of the page. */
+  featured?: boolean;
 };
 
-// PLACEHOLDER — supply actual office bearer names and organisations.
+// Confirmed office bearer profiles supplied by the client. `photo` paths
+// are placeholders — see public/images/office-bearers/README.md for the
+// exact filenames. Until a photo file exists, a lettermark avatar is
+// shown automatically, so nothing looks broken while photos are pending.
 export const officeBearers: OfficeBearer[] = [
-  { name: "To be confirmed", designation: "Chairman", organisation: "—" },
-  { name: "To be confirmed", designation: "Vice Chairman", organisation: "—" },
-  { name: "To be confirmed", designation: "Honorary Secretary", organisation: "—" },
-  { name: "To be confirmed", designation: "Honorary Treasurer", organisation: "—" },
+  {
+    name: "Mr. Rahul Gupta",
+    designation: "Chairman",
+    organisation: "J. C. Flowers Asset Reconstruction Private Limited",
+    photo: "/images/office-bearers/rahul-gupta.png",
+    featured: true,
+    bio: "Mr. Rahul Gupta is a seasoned financial services professional with over four decades of experience across multiple global organizations in major Asian economies, including India, Singapore and Japan. Rahul is currently the Managing Director and CEO of J. C. Flowers Asset Reconstruction Private Limited, India. Prior to JCF ARC, Rahul has held leadership roles at Ambit, India; Shinsei Bank, Japan; DBS Bank, Head Office, Singapore; Deutsche Bank, Asia Pacific Head Office, Singapore; HSBC, India; and Société Générale, India.\n\nBeyond his corporate roles, Rahul is also engaged in academic and social impact initiatives with Harvard University. He is a Research Associate (2022-2025) of The Lakshmi Mittal and Family South Asia Institute at Harvard University. Prior to this, he was Senior Fellow (2021 and 2020) and Fellow (2019), Advanced Leadership Initiative at Harvard University. Rahul holds a Master's in Marketing Management from the Jamnalal Bajaj Institute of Management Studies, University of Bombay, and a Bachelor of Commerce (Honours) from the University of Delhi.",
+  },
+  {
+    name: "Mr. Chandan Churiwal",
+    designation: "Vice Chairman",
+    organisation: "ACRE",
+    photo: "/images/office-bearers/chandan-churiwal.png",
+    bio: "Mr. Chandan Churiwal is Chief Executive Officer and Whole Time Director at ACRE. He has an experience of over 18 years in buying and resolving stressed financial assets. At ACRE, he has been instrumental in adding a new AUM of more than 20,000 Crore and recoveries of more than 17,000 Crore.\n\nPrior to joining ACRE, he was working with Standard Chartered Bank (SCB), where he was managing a stressed asset book of ~USD 1bn spread across power, sugar & telecom sectors and was closely involved in multiple exits for the bank. Prior to SCB, he worked with Yes Bank, Asset Reconstruction Company (India) Ltd. and ICICI Bank. He is an MBA from the Indian Institute of Management, Bangalore.",
+  },
+  {
+    name: "Mr. R. Mallikarjuna",
+    designation: "Secretary",
+    organisation: "Pridhvi Asset Reconstruction and Securitisation Company Ltd",
+    photo: "/images/office-bearers/r-mallikarjuna.png",
+    bio: "Mr. R. Mallikarjuna is currently working as Managing Director & CEO of M/s Pridhvi Asset Reconstruction and Securitisation Company Ltd. He is a law graduate and post graduate in Finance with work experience of over 40 years in various fields such as General Banking, Risk Management, Legal, Recovery and Resolutions. He is also a registered Insolvency Professional.\n\nPrior to joining PARAS, he worked as Presiding Officer, Debts Recovery Tribunal, Hyderabad. During his career with Andhra Bank, he served in various positions, with his last position held as General Manager, Recovery Management and Legal.",
+  },
+  {
+    name: "Mr. Girish Sinha",
+    designation: "Treasurer",
+    organisation: "ASREC India Limited",
+    photo: "/images/office-bearers/girish-sinha.png",
+    bio: "Shri Girish Sharan Sinha holds a degree in MBA - Finance (Investment & Portfolio Management). He has focused on Stressed Asset Management and financial markets during his 13-year career. He started his profession in the ARC industry with M/s Asrec (India) Limited, where he streamlined and spearheaded the asset reconstruction business of the Company. He was also instrumental in setting up and implementing ASREC's IT strategy.\n\nSubsequently he moved to Omkara Asset Reconstruction Private Limited as Chief Operating Officer. Currently he is working as Managing Director & Chief Executive Officer of ASREC India Limited. Prior to his assignments in ARCs, he worked at Central Bank of India and Bank of India in various capacities.",
+  },
+  {
+    name: "Mr. Phanindranath Kakarla",
+    designation: "Managing Committee Member",
+    organisation: "ARCIL",
+    photo: "/images/office-bearers/phanindranath-kakarla.png",
+    bio: "Mr. Phanindranath Kakarla is the Chief Executive Officer & Managing Director of ARCIL. A distinguished leader in financial services, he brings extensive experience across banking and asset management, encompassing finance, credit risk, corporate banking, transaction banking, and distressed asset management. He has deep expertise in building and scaling institutions, driving strategic transformation, and delivering sustainable value in complex and highly regulated financial environments.\n\nAs CEO & MD, he leads the organization's strategic direction with a focus on the acquisition, resolution, and value maximization of distressed assets, and is responsible for shaping ARCIL's growth strategy and strengthening its institutional capabilities. He partners closely with the Board, regulators, lenders, and investors to strengthen the Company's investment and resolution capabilities while ensuring disciplined execution, robust governance, and prudent risk management.",
+  },
+  {
+    name: "Mr. Srinivasan Viswanathan",
+    designation: "Managing Committee Member",
+    organisation: "JM Financial Asset Reconstruction Company Limited",
+    photo: "/images/office-bearers/srinivasan-viswanathan.png",
+    bio: "Mr. Srinivasan Viswanathan is the Chief Executive Officer of JM Financial Asset Reconstruction Company Limited. A seasoned stressed assets professional, having joined this space in 2006, he brings over 25 years of expertise to the table. Srinivasan's previous position was with Standard Chartered Bank, with other stints at Citibank, JP Morgan, Dun & Bradstreet, India Infoline and BNP Paribas.\n\nHe has completed his MBA (Finance) from the Jamnalal Bajaj Institute of Management Studies and B.Com from R.A. Podar College of Commerce & Economics.",
+  },
+  {
+    name: "Mr. Aerik Sharma",
+    designation: "Managing Committee Member",
+    organisation: "Encore ARC",
+    photo: "/images/office-bearers/aerik-sharma.png",
+    bio: "Aerik has over 25 years of leadership experience in the financial services sector and is currently Chief Operating Officer at Encore ARC. As a founding member of the team at Encore ARC, he has been instrumental in building and profitably scaling the business from the ground up, shaping and executing the company's growth strategy, driving operational performance, and strengthening the platform's scalability and governance.\n\nHe brings expertise in the acquisition and resolution of secured and unsecured stressed financial assets, with a proven track record of maximizing recoveries and driving portfolio performance. Prior to joining Encore, he held senior leadership roles at Tata AIA Life Insurance, PNB MetLife India and Midland Credit Management. Aerik is a Chartered Accountant from the Institute of Chartered Accountants of India (ICAI) and a Company Secretary, and holds a bachelor's degree in commerce from the University of Delhi.",
+  },
+  {
+    name: "Mr. Hari Hara Mishra",
+    designation: "Chief Executive Officer",
+    organisation: "Association of ARCs in India",
+    photo: "/images/office-bearers/hari-hara-mishra.png",
+    bio: "Career banker from State Bank of India (1982-2004). Moved to the ARC sector in 2004, when the first ARC in India, ARCIL, started functioning. Associated with the Asset Reconstruction sector since those formative days till date, in various ARCs in executive and director level roles.\n\nActively engaged in ARC Association activities since its inception in 2009 and has held various elective offices, including Secretary of the ARC Association. Had the opportunity to draft the report of the Key Advisory Group (KAG) on the ARC sector (2011) appointed by the Ministry of Finance. Was a member of an IBA Group on NPA Sale Process and Assignment Agreement (2012), and was part of the CAFRAL Group on the discussion paper on Distressed Assets (2013). At present, a member of an IBA working group on ARCs (2023).\n\nA regular contributor to various publications and a speaker/panellist on subjects of the economy, finance, and distressed debt.",
+  },
 ];
 
 // PLACEHOLDER — supply actual committee names, mandates and members.
